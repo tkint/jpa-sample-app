@@ -3,7 +3,7 @@ package fr.epsi.orm.genericjpasample.service;
 import java.util.List;
 
 import fr.epsi.orm.genericjpasample.dao.CostumerDAO;
-import fr.epsi.orm.genericjpasample.entities.Costumer;
+import fr.epsi.orm.genericjpasample.entities.Customer;
 import fr.epsi.orm.genericjpasample.managers.SimpleEntityManager;
 
 /**
@@ -21,11 +21,11 @@ public class CostumerService {
 		dao = new CostumerDAO(simpleEntityManager.getEntityManager());
 	}
 	
-	public void save(Costumer costumer){
+	public void save(Customer customer){
 		try{
 			simpleEntityManager.beginTransaction();
-			costumer.validate();
-			dao.save(costumer);
+			customer.validate();
+			dao.save(customer);
 			simpleEntityManager.commit();
 		}catch(Exception e){
 			e.printStackTrace();
@@ -33,7 +33,7 @@ public class CostumerService {
 		}
 	}
 	
-	public List<Costumer> findAll(){
+	public List<Customer> findAll(){
 		return dao.findAll();
 	}
 }

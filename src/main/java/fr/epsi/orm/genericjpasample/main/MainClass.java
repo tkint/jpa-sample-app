@@ -1,6 +1,6 @@
 package fr.epsi.orm.genericjpasample.main;
 
-import fr.epsi.orm.genericjpasample.entities.Costumer;
+import fr.epsi.orm.genericjpasample.entities.Customer;
 import fr.epsi.orm.genericjpasample.entities.Product;
 import fr.epsi.orm.genericjpasample.managers.SimpleEntityManager;
 import fr.epsi.orm.genericjpasample.service.CostumerService;
@@ -22,12 +22,12 @@ public class MainClass {
 		CostumerService costumerService = new CostumerService(simpleEntityManager);
 		ProductService productService = new ProductService(simpleEntityManager);
 		
-		costumerService.save(new Costumer("test", "test"));
-		costumerService.save(new Costumer("test", "test"));
-		costumerService.save(new Costumer("test", "test"));
-		costumerService.save(new Costumer("test", "test"));
+		costumerService.save(new Customer("test", "test"));
+		costumerService.save(new Customer("test", "test"));
+		costumerService.save(new Customer("test", "test"));
+		costumerService.save(new Customer("test", "test"));
 		
-		for(Costumer c : costumerService.findAll()){
+		for(Customer c : costumerService.findAll()){
 			System.out.println(c.getName());
 		}
 		
